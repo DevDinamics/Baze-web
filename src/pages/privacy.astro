@@ -1,0 +1,76 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Política de Privacidad | Blaze Legal">
+    <Navbar />
+    
+    <main class="relative bg-blaze-bg transition-colors duration-500 pt-20 min-h-screen overflow-hidden">
+        
+        {/* Efecto visual inspirado en Apple Legal (Gradiente azul/plata sutil) */}
+        <div class="absolute top-0 left-0 w-full h-[500px] bg-gradient-to-br from-blue-500/5 via-transparent to-transparent dark:from-blue-600/10 pointer-events-none -z-10"></div>
+        <div class="absolute -top-40 -left-40 w-96 h-96 bg-blue-400/10 dark:bg-blue-500/10 blur-[100px] rounded-full pointer-events-none -z-10"></div>
+
+        {/* Menú de Navegación Legal Secundario */}
+        <div class="border-b border-blaze-border/50 sticky top-[72px] z-40 bg-blaze-bg/80 backdrop-blur-md">
+            <div class="max-w-5xl mx-auto px-6 py-4 flex items-center gap-6 md:gap-10 overflow-x-auto whitespace-nowrap text-xs md:text-sm font-sans font-medium text-blaze-text-muted">
+                <span class="text-blaze-text-main font-bold">Privacidad</span>
+                <a href="/terms" class="hover:text-blaze-text-main transition-colors">Términos de Uso</a>
+                <a href="/cookies" class="hover:text-blaze-text-main transition-colors">Cookies</a>
+                <a href="/sitemap" class="hover:text-blaze-text-main transition-colors">Seguridad en la Nube</a>
+            </div>
+        </div>
+
+        {/* Cabecera Editorial */}
+        <div class="max-w-3xl mx-auto px-6 pt-24 pb-16 text-center">
+            <h1 class="font-heading font-black text-4xl md:text-5xl text-blaze-text-main tracking-tight mb-8">
+                Política de privacidad para atletas e instructores de Blaze.
+            </h1>
+            <p class="font-sans text-lg md:text-xl text-blaze-text-main/80 leading-relaxed">
+                Blaze tiene un compromiso absoluto con tu privacidad. Lee nuestra política para comprender cómo protegemos tu información, tus métricas de salud y tu evolución dentro de nuestra comunidad.
+            </p>
+        </div>
+
+        <div class="max-w-3xl mx-auto px-6 pb-32">
+            {/* Divisor */}
+            <div class="w-full h-px bg-blaze-border/50 mb-16"></div>
+
+            {/* Contenido Legal (Typography optimizada para lectura) */}
+            <article class="prose prose-sm md:prose-base prose-zinc dark:prose-invert max-w-none font-sans text-blaze-text-muted">
+                
+                <h3 class="text-2xl font-heading font-bold text-blaze-text-main mb-4">1. El principio de privacidad de Blaze</h3>
+                <p class="mb-8 leading-relaxed">
+                    Creemos firmemente que tus datos de salud, rutinas y progreso físico te pertenecen. Blaze está diseñado desde cero para ser un ecosistema que conecta a instructores con sus atletas, garantizando que la información sensible solo se comparta con tu entrenador autorizado. No vendemos tus métricas de entrenamiento a terceros bajo ninguna circunstancia.
+                </p>
+
+                <h3 class="text-2xl font-heading font-bold text-blaze-text-main mb-4">2. ¿Qué información recopilamos?</h3>
+                <p class="mb-4 leading-relaxed">Para ofrecerte la experiencia premium de nuestra plataforma, recopilamos las siguientes categorías de datos:</p>
+                <ul class="list-disc pl-6 mb-8 space-y-2">
+                    <li><strong class="text-blaze-text-main">Datos de perfil:</strong> Nombre, edad, peso inicial y objetivos físicos.</li>
+                    <li><strong class="text-blaze-text-main">Métricas de rendimiento:</strong> Volumen de carga, historial de rutinas, rachas diarias y registros de ingesta de macronutrientes.</li>
+                    <li><strong class="text-blaze-text-main">Bienestar mental (Check-in):</strong> Registros de fatiga, horas de sueño y niveles de estrés que proporcionas para ajustar tu entrenamiento.</li>
+                </ul>
+
+                <h3 class="text-2xl font-heading font-bold text-blaze-text-main mb-4">3. Relación Entrenador-Atleta</h3>
+                <p class="mb-8 leading-relaxed">
+                    Al unirte a la red de un instructor dentro de Blaze, le otorgas acceso a tus métricas de rendimiento y check-ins de recuperación. Esto es fundamental para que puedan ajustar tus rutinas de forma inteligente. Si decides abandonar la comunidad de un instructor, su acceso a tus datos futuros se revocará inmediatamente.
+                </p>
+
+                <h3 class="text-2xl font-heading font-bold text-blaze-text-main mb-4">4. Seguridad y Arquitectura en la Nube</h3>
+                <p class="mb-8 leading-relaxed">
+                    La seguridad de tu información es nuestra prioridad. Toda la base de datos de la plataforma Blaze está respaldada por la infraestructura de <strong class="text-blaze-text-main">Google Cloud Firestore</strong>. Utilizamos reglas de seguridad estrictas (Security Rules) y encriptación de extremo a extremo en tránsito para asegurar que ninguna entidad no autorizada pueda acceder a tus fotos de progreso o métricas.
+                </p>
+
+                <h3 class="text-2xl font-heading font-bold text-blaze-text-main mb-4">5. Aviso de Fase Beta</h3>
+                <p class="mb-8 leading-relaxed">
+                    Actualmente, Blaze opera en un entorno de pruebas restringido (Beta). Durante esta fase, recopilamos datos técnicos adicionales, como informes de fallos y telemetría de la interfaz, con el único propósito de estabilizar la aplicación para su lanzamiento público.
+                </p>
+
+            </article>
+        </div>
+    </main>
+
+    <Footer />
+</Layout>

@@ -1,0 +1,24 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import BlazeHeroPro from '../components/BlazeHeroPro.jsx';
+import AppShowcase from '../components/AppShowcase.jsx';
+import Footer from '../components/Footer.astro';
+import BenefitsPro from '../components/BenefitsPro.jsx';
+import MentalWellnessPro from '../components/MentalWellnessPro.jsx';
+import PartnersPro from '../components/PartnersPro.jsx';
+import CookieBanner from '../components/CookieBanner';
+---
+
+<Layout title="Blaze | Social Fitness para Instructores">
+    <Navbar />
+    <main class="relative">
+        <BlazeHeroPro client:load />
+		<PartnersPro client:load />
+        <AppShowcase client:load />
+		<MentalWellnessPro client:load />
+        <BenefitsPro client:load />
+        <Footer />
+        <CookieBanner />
+    </main>
+</Layout>

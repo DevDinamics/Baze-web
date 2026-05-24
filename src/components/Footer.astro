@@ -1,0 +1,98 @@
+---
+// src/components/Footer.astro
+---
+
+<footer class="bg-blaze-bg border-t border-blaze-border text-blaze-text-muted font-sans pt-14 sm:pt-20 pb-8 px-4 sm:px-6 transition-colors duration-500">
+  <div class="max-w-7xl mx-auto">
+
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-5 mb-10 pb-8 border-b border-blaze-border">
+      <div class="flex items-center gap-3 flex-wrap">
+        <div class="relative w-7 h-7 flex-shrink-0 overflow-visible opacity-80 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+          <img src="/logo-blaze-dark.png" alt="Blaze Logo" class="absolute w-full h-full object-contain block dark:hidden" />
+          <img src="/logo-blaze-light.png" alt="Blaze Logo" class="absolute w-full h-full object-contain hidden dark:block" />
+        </div>
+        <span class="font-heading font-extrabold text-xl tracking-tighter text-blaze-text-main">Blaze</span>
+        <span class="px-2.5 py-0.5 rounded-full border border-blaze-accent/30 bg-blaze-accent/10 text-blaze-accent font-rajdhani text-[10px] font-bold uppercase tracking-widest whitespace-nowrap">
+          Beta Test
+        </span>
+      </div>
+      <p class="text-[11px] leading-relaxed text-blaze-text-muted max-w-sm sm:text-right">
+        Estás navegando en un entorno de pruebas preliminar. Ayúdanos a perfeccionar la experiencia reportando cualquier anomalía antes del lanzamiento oficial.
+      </p>
+    </div>
+
+    <div class="space-y-3 pb-8 border-b border-blaze-border text-[11px] sm:text-xs leading-relaxed max-w-5xl tracking-tight">
+      <p>
+        <span class="font-semibold text-blaze-text-main">Aviso de Plataforma:</span>
+        Blaze es un ecosistema digital de gestión y conectividad fitness desarrollado para que los entrenadores brinden una experiencia única, personalizada y de alta fidelidad a sus usuarios. Las herramientas de asignación de rutinas, seguimiento de volumen y métricas de progreso son gestionadas directamente por el profesional a cargo y no constituyen asesoría médica automatizada.
+      </p>
+      <p>* Las funciones de interacción comunitaria, perfiles interactivos y conectividad entre atletas forman parte de nuestra arquitectura en desarrollo hacia una red social fitness integrada. Al participar en esta fase, aceptas que ciertas herramientas de interacción social se implementarán de forma progresiva y experimental.</p>
+      <p>1. La Fase Beta de Blaze es un entorno de pruebas preliminar no comercial. El acceso anticipado está restringido a instructores seleccionados y sus respectivos usuarios invitados, sujeto a la disponibilidad de ranuras en plataformas de distribución de pruebas de software móvil.</p>
+      <p>2. La sincronización de datos en tiempo real entre el panel del entrenador y la interfaz del atleta requiere una conexión activa a internet y dispositivos móviles compatibles.</p>
+    </div>
+
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8 py-10 sm:py-12 text-xs">
+      <div class="flex flex-col gap-3">
+        <h3 class="font-semibold text-blaze-text-main tracking-tight">Explorar</h3>
+        <a href="#features" class="hover:text-blaze-text-main hover:underline transition-colors">Características</a>
+        <a href="#dashboard" class="hover:text-blaze-text-main hover:underline transition-colors">Dashboard Pro</a>
+        <a href="#entrenamiento" class="hover:text-blaze-text-main hover:underline transition-colors">Smart Workouts</a>
+        <a href="#nutricion" class="hover:text-blaze-text-main hover:underline transition-colors">Smart Fuel</a>
+        <a href="#stats" class="hover:text-blaze-text-main hover:underline transition-colors">Evolución Atleta</a>
+      </div>
+
+      <div class="flex flex-col gap-3">
+        <h3 class="font-semibold text-blaze-text-main tracking-tight">Instructores</h3>
+        <a href="#comunidad" class="hover:text-blaze-text-main hover:underline transition-colors">Escalar Comunidad</a>
+        <a href="#gestion" class="hover:text-blaze-text-main hover:underline transition-colors">Gestión de Atletas</a>
+        <a href="#planes" class="hover:text-blaze-text-main hover:underline transition-colors">Creador de Rutinas</a>
+        <a href="#analytics" class="hover:text-blaze-text-main hover:underline transition-colors">Volumen de Carga</a>
+      </div>
+
+      <div class="flex flex-col gap-3">
+        <h3 class="font-semibold text-blaze-text-main tracking-tight">Cuenta</h3>
+        <a href="/login" class="hover:text-blaze-text-main hover:underline transition-colors">Iniciar Sesión</a>
+        <a href="/access" class="hover:text-blaze-text-main hover:underline transition-colors">Solicitar Acceso Beta</a>
+        <a href="#perfil" class="hover:text-blaze-text-main hover:underline transition-colors">Mi Perfil</a>
+      </div>
+
+      <div class="flex flex-col gap-3">
+        <h3 class="font-semibold text-blaze-text-main tracking-tight">Valores</h3>
+        {/* CORREGIDO: Redirigiendo a las nuevas páginas de privacidad y términos */}
+        <a href="/privacy" class="hover:text-blaze-text-main hover:underline transition-colors">Privacidad de Datos</a>
+        <a href="/terms" class="hover:text-blaze-text-main hover:underline transition-colors">Términos de Uso</a>
+        <a href="/privacy" class="hover:text-blaze-text-main hover:underline transition-colors">Cloud Security</a>
+      </div>
+
+      <div class="flex flex-col gap-3">
+        <h3 class="font-semibold text-blaze-text-main tracking-tight">Acerca de</h3>
+        <a href="#newsroom" class="hover:text-blaze-text-main hover:underline transition-colors">Newsroom</a>
+        <a href="#contacto" class="hover:text-blaze-text-main hover:underline transition-colors">Soporte</a>
+        <a href="#unirse" class="hover:text-blaze-text-main hover:underline transition-colors">Oportunidades</a>
+      </div>
+    </div>
+
+    <div class="pt-6 border-t border-blaze-border flex flex-col md:flex-row md:items-center justify-between gap-4 text-[11px] text-blaze-text-muted">
+      <div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+        <span>Copyright © 2026 Blaze Inc. Todos los derechos reservados.</span>
+        <div class="flex flex-wrap items-center gap-x-3 gap-y-1.5 text-blaze-text-main/70 font-medium">
+          <a href="/privacy" class="hover:underline hover:text-blaze-text-main transition-colors">Privacidad</a>
+          <span class="opacity-30">|</span>
+          <a href="/terms" class="hover:underline hover:text-blaze-text-main transition-colors">Términos</a>
+          <span class="opacity-30">|</span>
+          <a href="/cookies" class="hover:underline hover:text-blaze-text-main transition-colors">Cookies</a>
+          <span class="opacity-30">|</span>
+          <a href="/sitemap" class="hover:underline hover:text-blaze-text-main transition-colors">Sitemap</a>
+        </div>
+      </div>
+      <div class="text-blaze-text-main/80 font-medium hover:underline cursor-pointer flex items-center gap-1.5 self-start md:self-auto transition-colors hover:text-blaze-text-main">
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="10" stroke-width="1.5"/>
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/>
+        </svg>
+        <span>México</span>
+      </div>
+    </div>
+
+  </div>
+</footer>

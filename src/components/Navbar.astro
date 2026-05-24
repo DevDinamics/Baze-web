@@ -1,0 +1,112 @@
+---
+import NavLink from './NavLink.astro';
+import ThemeTogglePro from './ThemeToggle.jsx';
+import NavbarBrandPro from './NavbarBrandPro.jsx';
+---
+
+<nav class="fixed top-0 left-0 w-full z-50 bg-blaze-navbar-bg backdrop-blur-xl border-b border-blaze-border transition-colors duration-500">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between gap-4">
+
+    <!-- Logo -->
+    <NavbarBrandPro client:load />
+
+    <!-- Links desktop -->
+    <div class="hidden md:flex items-center gap-1">
+      <NavLink href="#features">Características</NavLink>
+      <NavLink href="#instructors">Instructores</NavLink>
+      <NavLink href="#community">Comunidad</NavLink>
+    </div>
+
+    <!-- Acciones: theme toggle + CTA + hamburguesa -->
+    <div class="flex items-center gap-2 sm:gap-3">
+      <ThemeTogglePro client:load />
+
+      <!-- CTA solo en sm+ -->
+      <a
+        href="/login"
+        class="hidden sm:inline-flex items-center px-5 py-2 bg-blaze-text-main text-blaze-button-text font-semibold rounded-full text-sm hover:scale-105 transition-transform duration-300 shadow-md shadow-blaze-text-main/10 whitespace-nowrap"
+      >
+        Solicitar Beta
+      </a>
+
+      <!-- Hamburguesa solo en mobile -->
+      <button
+        id="nav-toggle"
+        class="md:hidden flex flex-col justify-center items-center w-10 h-10 rounded-full bg-blaze-text-main/5 border border-blaze-border transition-colors hover:bg-blaze-text-main/10"
+        aria-label="Abrir menú"
+        aria-expanded="false"
+      >
+        <!-- Las 3 líneas tienen gap de 5px entre sí (h-[1.5px] + mt-[5px]).
+             Para formar la X, la línea 1 baja 6.5px y rota 45°,
+             la línea 3 sube 6.5px y rota -45°. -->
+        <span id="hline-1" class="block w-5 h-[1.5px] bg-blaze-text-main rounded-full transition-all duration-300 origin-center"></span>
+        <span id="hline-2" class="block w-5 h-[1.5px] bg-blaze-text-main rounded-full transition-all duration-300 mt-[5px] origin-center"></span>
+        <span id="hline-3" class="block w-5 h-[1.5px] bg-blaze-text-main rounded-full transition-all duration-300 mt-[5px] origin-center"></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu drawer -->
+  <div
+    id="mobile-menu"
+    class="md:hidden overflow-hidden max-h-0 transition-[max-height] duration-500 ease-in-out border-t border-blaze-border/0"
+  >
+    <div class="flex flex-col gap-1 px-4 py-4">
+      <a href="#features" class="nav-mobile-link px-4 py-3 rounded-2xl text-sm font-medium text-blaze-text-muted hover:text-blaze-text-main hover:bg-blaze-text-main/5 transition-all duration-200">Características</a>
+      <a href="#instructors" class="nav-mobile-link px-4 py-3 rounded-2xl text-sm font-medium text-blaze-text-muted hover:text-blaze-text-main hover:bg-blaze-text-main/5 transition-all duration-200">Instructores</a>
+      <a href="#community" class="nav-mobile-link px-4 py-3 rounded-2xl text-sm font-medium text-blaze-text-muted hover:text-blaze-text-main hover:bg-blaze-text-main/5 transition-all duration-200">Comunidad</a>
+      <div class="pt-3 mt-2 border-t border-blaze-border">
+        <a
+          href="/login"
+          class="flex items-center justify-center w-full py-3 bg-blaze-text-main text-blaze-button-text font-semibold rounded-2xl text-sm transition-opacity hover:opacity-90"
+        >
+          Solicitar Beta
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<script>
+  const toggle = document.getElementById('nav-toggle');
+  const menu = document.getElementById('mobile-menu');
+  const l1 = document.getElementById('hline-1') as HTMLElement;
+  const l2 = document.getElementById('hline-2') as HTMLElement;
+  const l3 = document.getElementById('hline-3') as HTMLElement;
+  let open = false;
+
+  // El gap entre líneas es 5px (mt-[5px]) + 1.5px (altura línea) = 6.5px
+  const OFFSET = '6.5px';
+
+  toggle?.addEventListener('click', () => {
+    open = !open;
+    toggle.setAttribute('aria-expanded', String(open));
+
+    if (open) {
+      menu!.style.maxHeight = menu!.scrollHeight + 'px';
+      menu!.classList.add('border-blaze-border/40');
+      l1.style.transform = `translateY(${OFFSET}) rotate(45deg)`;
+      l2.style.opacity = '0';
+      l2.style.transform = 'scaleX(0)';
+      l3.style.transform = `translateY(-${OFFSET}) rotate(-45deg)`;
+    } else {
+      menu!.style.maxHeight = '0';
+      menu!.classList.remove('border-blaze-border/40');
+      l1.style.transform = '';
+      l2.style.opacity = '';
+      l2.style.transform = '';
+      l3.style.transform = '';
+    }
+  });
+
+  document.querySelectorAll('.nav-mobile-link').forEach(link => {
+    link.addEventListener('click', () => {
+      open = false;
+      menu!.style.maxHeight = '0';
+      l1.style.transform = '';
+      l2.style.opacity = '';
+      l2.style.transform = '';
+      l3.style.transform = '';
+    });
+  });
+</script>

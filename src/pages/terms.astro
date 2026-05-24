@@ -1,0 +1,62 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Términos de Uso | Blaze Legal">
+    <Navbar />
+    
+    <main class="relative bg-blaze-bg transition-colors duration-500 pt-20 min-h-screen overflow-hidden">
+        
+        <div class="absolute top-0 right-0 w-full h-[500px] bg-gradient-to-bl from-blaze-accent/5 via-transparent to-transparent pointer-events-none -z-10"></div>
+
+        {/* Menú de Navegación Legal Secundario */}
+        <div class="border-b border-blaze-border/50 sticky top-[72px] z-40 bg-blaze-bg/80 backdrop-blur-md">
+            <div class="max-w-5xl mx-auto px-6 py-4 flex items-center gap-6 md:gap-10 overflow-x-auto whitespace-nowrap text-xs md:text-sm font-sans font-medium text-blaze-text-muted">
+                <a href="/privacy" class="hover:text-blaze-text-main transition-colors">Privacidad</a>
+                <span class="text-blaze-text-main font-bold">Términos de Uso</span>
+                <a href="/cookies" class="hover:text-blaze-text-main transition-colors">Cookies</a>
+                <a href="/sitemap" class="hover:text-blaze-text-main transition-colors">Seguridad en la Nube</a>
+            </div>
+        </div>
+
+        {/* Cabecera Editorial */}
+        <div class="max-w-3xl mx-auto px-6 pt-24 pb-16 text-center">
+            <span class="font-rajdhani text-xs font-bold text-blaze-text-muted uppercase tracking-[0.25em] mb-6 block">
+                Términos del Servicio
+            </span>
+            <h1 class="font-heading font-black text-5xl md:text-6xl text-blaze-text-main tracking-tight mb-8">
+                Blaze Legal
+            </h1>
+            <p class="font-sans text-lg md:text-xl text-blaze-text-muted leading-relaxed">
+                Encuentra referencias legales, responsabilidades de salud y recursos para la red social fitness de Blaze.
+            </p>
+        </div>
+
+        <div class="max-w-3xl mx-auto px-6 pb-32">
+            <div class="w-full h-px bg-blaze-border/50 mb-16"></div>
+
+            <article class="prose prose-sm md:prose-base prose-zinc dark:prose-invert max-w-none font-sans text-blaze-text-muted">
+                
+                <h3 class="text-xl font-heading font-bold text-blaze-text-main mb-4">Acuerdo de Software Beta</h3>
+                <p class="mb-6 leading-relaxed">
+                    Al utilizar la plataforma Blaze, reconoces que el software se encuentra en fase de pruebas. Blaze Inc. no garantiza el funcionamiento ininterrumpido de la aplicación ni se hace responsable por la pérdida temporal de rutinas, puntos XP o información de la comunidad durante este periodo.
+                </p>
+
+                <h3 class="text-xl font-heading font-bold text-blaze-text-main mb-4">Aviso Médico Estricto</h3>
+                <p class="mb-6 leading-relaxed">
+                    Blaze proporciona herramientas de software para instructores de fitness y sus atletas. La plataforma NO es un dispositivo médico ni un sustituto del consejo médico profesional. Cualquier plan de entrenamiento, cálculo de calorías o meta de nutrición creada a través de la app es responsabilidad exclusiva del instructor que la emite y del usuario que la ejecuta. Consulte a un médico antes de comenzar cualquier programa de hipertrofia.
+                </p>
+
+                <h3 class="text-xl font-heading font-bold text-blaze-text-main mb-4">Propiedad Intelectual</h3>
+                <p class="mb-6 leading-relaxed">
+                    El código, diseño, la marca "Blaze", los logotipos y la arquitectura del Dashboard son propiedad exclusiva de Blaze Inc. El contenido generado por los instructores (videos de técnica, rutinas personalizadas) sigue siendo propiedad intelectual del instructor, otorgando a Blaze una licencia de uso para mostrarla dentro de la plataforma.
+                </p>
+
+            </article>
+        </div>
+    </main>
+
+    <Footer />
+</Layout>
