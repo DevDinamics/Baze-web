@@ -26,7 +26,7 @@ export default function BlazeHeroPro() {
         className="mb-6 sm:mb-8 px-4 py-1.5 rounded-full border border-blaze-border bg-blaze-text-main/5 backdrop-blur-sm shadow-inner"
       >
         <span className="font-rajdhani text-[10px] sm:text-xs font-bold text-blaze-text-muted uppercase tracking-[0.2em]">
-          Plataforma Fitness Premium
+          Plataforma Fitness 
         </span>
       </motion.div>
 
@@ -48,8 +48,7 @@ export default function BlazeHeroPro() {
         variants={itemVariants}
         className="font-sans text-base sm:text-lg md:text-xl text-blaze-text-muted mb-10 sm:mb-12 max-w-xs sm:max-w-lg md:max-w-2xl lg:max-w-3xl leading-relaxed px-2"
       >
-        La red social diseñada para instructores premium. Conecta, comparte y gestiona tu comunidad de atletas con una estética Apple minimalista.
-      </motion.p>
+        Eleva el estándar de tu coaching. Centraliza rutinas, monitorea el rendimiento en tiempo real y haz crecer a tu comunidad en un ecosistema digital de primer nivel.      </motion.p>
 
       {/* Botones — stack en mobile, row en sm+ */}
       <motion.div
